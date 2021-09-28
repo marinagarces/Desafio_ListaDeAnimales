@@ -11,8 +11,8 @@ class Propietario {
 }
 
 class Animal extends Propietario {
-  constructor(nombreProp, telefonoProp, direccionProp, tipo) {
-    super(nombreProp, telefonoProp, direccionProp);
+  constructor(nombre_propietario, telefono_propietario, direccion_propietario, tipo) {
+    super(nombre_propietario, telefono_propietario, direccion_propietario);
     this._tipo = tipo;
   }
 
@@ -22,26 +22,26 @@ class Animal extends Propietario {
 }
 
 class Mascota extends Animal {
-  constructor(nombreProp, telefonoProp, direccionProp, tipoAnimal, nombreMascota, enfermedad) {
-    super(nombreProp, telefonoProp, direccionProp, tipoAnimal);
-    this._nombreMascota = nombreMascota;
+  constructor(nombre_propietario, telefono_propietario, direccion_propietario, tipo_animal, nombre_mascota, enfermedad) {
+    super(nombre_propietario, telefono_propietario, direccion_propietario, tipo_animal);
+    this._nombre_mascota = nombre_mascota;
     this._enfermedad = enfermedad;
   }
 
-  get nombreMascota() {
-    return this._nombreMascota;
+  get nombre_mascota() {
+    return this._nombre_mascota;
   }
 
-  set nombreMascota(nuevoNombreMascota) {
-    this._nombreMascota = nuevoNombreMascota;
+  set nombre_mascota(nuevoNombre_mascota) {
+    this._nombre_mascota = nuevoNombre_mascota;
   }
 
   get enfermedad() {
     return this._enfermedad;
   }
 
-  set enfermedad(nuevaEnfermedad) {
-    this._enfermedad = nuevaEnfermedad;
+  set enfermedad(nueva_Enfermedad) {
+    this._enfermedad = nueva_Enfermedad;
   }
 }
 
@@ -52,16 +52,16 @@ button.addEventListener("click", (event) => {
   const telefono = propTelefono.value;
   const direccion = propDireccion.value;
   const tipo = propTipoMascota.value;
-  const nombreMascota = propNombreMascota.value;
+  const nombre_mascota = propnombre_mascota.value;
   const enfermedad = propEnfermedadMascota.value;
 
-  const mascota = new Mascota(nombre, telefono, direccion, tipo, nombreMascota, enfermedad);
+  const mascota = new Mascota(nombre, telefono, direccion, tipo, nombre_mascota, enfermedad);
 
   const resultado = document.getElementById("resultado");
   resultado.innerHTML = `
   <ul>
     <li>${mascota.datosPropietario()}</li>
-    <li>El tipo de animal es: ${mascota.tipo}, mientras que el nombre de las mascota es: ${mascota.nombreMascota} y la enfermedad es: ${mascota.enfermedad}</li>
+    <li>El tipo de animal es: ${mascota.tipo}, mientras que el nombre de las mascota es: ${mascota.nombre_mascota} y la enfermedad es: ${mascota.enfermedad}</li>
   </ul>
   `
 
@@ -73,5 +73,5 @@ const propDireccion = document.getElementById("direccion");
 
 const propTipoMascota = document.getElementById("tipo");
 
-const propNombreMascota = document.getElementById("nombreMascota");
+const propnombre_mascota = document.getElementById("nombre_mascota");
 const propEnfermedadMascota = document.getElementById("enfermedad");
